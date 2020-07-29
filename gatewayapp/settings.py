@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'qtvfr4xx^ocmb5ixd6wrw6(tp_7qq#d^f))6l_kcl2_4@k$t!8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["gateway.crmbaylyn.com"]
 
 
 # Application definition
