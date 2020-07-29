@@ -16,6 +16,7 @@ virtualenv/
 # Python compiled byte code
 *.pyc
 *.pickle
+__pycache__/
 
 
 # SQLite3 database
@@ -52,7 +53,3 @@ celerybeat.pid
 
 media/
 static/
-frontend/build/
-frontend/node_modules/
-leads/migrations/0041_remove_services_location.py
-frontend/report*
