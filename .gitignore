@@ -1,0 +1,58 @@
+# IDEs
+.project
+.pydevproject
+.idea
+.vscode
+.settings
+.vs
+
+# Random files
+*~
+\#*
+
+virtualenv/
+
+
+# Python compiled byte code
+*.pyc
+*.pickle
+
+
+# SQLite3 database
+*.sqlite
+
+*.DS_Store
+
+# Coverage
+coverage/
+.coverage
+.cache
+
+# static validation files
+.eslintrc
+.sass-lint.yml
+.prospector.yml
+.coveragerc
+
+# in case we run shippable tests don't include it
+shippable/
+
+# celery
+celerybeat-schedule.db
+celerybeat.pid
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+/.vs/config/applicationhost.config
+/.vs/crm/v15/.suo
+/.vs/ProjectSettings.json
+/.vs/VSWorkspaceState.json
+
+media/
+static/
+frontend/build/
+frontend/node_modules/
+leads/migrations/0041_remove_services_location.py
+frontend/report*
