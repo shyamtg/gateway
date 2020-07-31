@@ -69,8 +69,7 @@ class Api(models.Model):
         if self.plugin != 1 and request.META.get('HTTP_AUTHORIZATION'):
             headers['authorization'] = request.META.get('HTTP_AUTHORIZATION')
         # headers['content-type'] = request.content_type
-
-        strip = '/service' + self.request_path
+        strip = '/service'
         full_path = request.get_full_path()[len(strip):]
         url = self.upstream_url + full_path
         method = request.method.lower()

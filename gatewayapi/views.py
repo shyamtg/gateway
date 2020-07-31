@@ -13,10 +13,13 @@ class gateway(APIView):
 
     def operation(self, request):
         # path = request.path_info.split('/')
+        # print(path)
         # if len(path) < 2:
         #     return Response('bad request', status=status.HTTP_400_BAD_REQUEST)
-        if request.META.get('company'):
-            company = request.META['company']
+        # apimodel = Api.objects.filter(name=path[2])
+        # request.path_info = request.path_info.split('/')[0]
+        if request.META.get('HTTP_COMPANY'):
+            company = request.META['HTTP_COMPANY']
         else:
             return Response('bad request', status=status.HTTP_400_BAD_REQUEST)
         apimodel = Api.objects.filter(name=company)
@@ -28,10 +31,12 @@ class gateway(APIView):
             return Response(msg, status=status.HTTP_400_BAD_REQUEST)
 
         res = apimodel[0].send_request(request)
+        print(res)
         if res.headers.get('Content-Type', '').lower() == 'application/json':
             data = res.json()
         else:
             data = res.content
+        print (data)
         return Response(data=data, status=res.status_code)
 
     def get(self, request):
