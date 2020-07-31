@@ -12,11 +12,11 @@ class gateway(APIView):
     authentication_classes = ()
 
     def operation(self, request):
-        path = request.path_info.split('/')
-        if len(path) < 2:
-            return Response('bad request', status=status.HTTP_400_BAD_REQUEST)
-
-        apimodel = Api.objects.filter(name=path[2])
+        # path = request.path_info.split('/')
+        # if len(path) < 2:
+        #     return Response('bad request', status=status.HTTP_400_BAD_REQUEST)
+        company = request.META['company']
+        apimodel = Api.objects.filter(name=company)
         if apimodel.count() != 1:
             return Response('bad request', status=status.HTTP_400_BAD_REQUEST)
 
