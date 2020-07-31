@@ -15,7 +15,10 @@ class gateway(APIView):
         # path = request.path_info.split('/')
         # if len(path) < 2:
         #     return Response('bad request', status=status.HTTP_400_BAD_REQUEST)
-        company = request.META['company']
+        if request.META.get('company'):
+            company = request.META['company']
+        else:
+            return Response('bad request', status=status.HTTP_400_BAD_REQUEST)
         apimodel = Api.objects.filter(name=company)
         if apimodel.count() != 1:
             return Response('bad request', status=status.HTTP_400_BAD_REQUEST)
