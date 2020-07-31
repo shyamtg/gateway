@@ -24,7 +24,7 @@ SECRET_KEY = 'qtvfr4xx^ocmb5ixd6wrw6(tp_7qq#d^f))6l_kcl2_4@k$t!8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["gateway.crmbaylyn.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["gateway.crmbaylyn.com"]
 
 
 # Application definition
@@ -79,8 +79,8 @@ DATABASES = {
      'default': {
          'ENGINE': 'django.db.backends.mysql',
          'NAME': 'gateway',
-         'USER': 'root',
-         'PASSWORD': 'root123',
+         'USER': 'admin',
+         'PASSWORD': 'Root@123',
          'HOST': 'localhost',
          'PORT': '3306'
      }
