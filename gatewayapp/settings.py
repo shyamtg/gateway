@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from configparser import ConfigParser
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -73,16 +75,16 @@ WSGI_APPLICATION = 'gatewayapp.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-
+config = ConfigParser()
+config.read(os.path.join(os.path.dirname(BASE_DIR), "conf.ini"))
 DATABASES = {
      'default': {
          'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'gateway',
-         'USER': 'admin',
-         'PASSWORD': 'Root@123',
-         'HOST': 'localhost',
-         'PORT': '3306'
+         'NAME': config.get('database', 'dbname'),
+         'USER': config.get('database', 'user'),
+         'PASSWORD': config.get('database', 'password'),
+         'HOST': config.get('database', 'host'),
+         'PORT': config.get('database', 'port')
      }
 }
 
