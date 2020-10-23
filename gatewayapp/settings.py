@@ -77,6 +77,7 @@ WSGI_APPLICATION = 'gatewayapp.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 config = ConfigParser()
 config.read(os.path.join(os.path.dirname(BASE_DIR), "conf.ini"))
+print(config)
 DATABASES = {
      'default': {
          'ENGINE': 'django.db.backends.mysql',
